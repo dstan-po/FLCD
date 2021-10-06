@@ -22,3 +22,6 @@ Constants:
 		constchar = """string"""
 		string = char{string}
 		char = letter | digit
+
+	4. Boolean:
+		bool = "true" | "false"
