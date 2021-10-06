@@ -1,0 +1,6 @@
+<program> ::= _START_COMPUTING_<declist>_STOP_DEC_<compdstmt>_STOP_COMPUTING_
+<declist> ::= <declaration> | <declaration>;<declist>
+<declaration> ::= <type> <identifier> | <array> <identifier>
+<type> ::= int | string | boolean
+<array> ::= <type>[<integer>]
+
