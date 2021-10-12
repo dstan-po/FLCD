@@ -6,3 +6,10 @@
 <statementlst> ::= <stmt> | <stmt> ; <stmtlst>
 <stmt> ::= <simplestmt> | <structstmt>
 <simplestmt> ::= <assignstmt> | <iostmt>
+<assignstmt> ::= <identifier> = <expression> | <identifier>[<number>] = <expression>
+<expression> ::= <expression> <operator> <identifier> | <expression> <operator> (<expression>) | <identifier>
+<iostmt> ::= read(<identifier>); | write(<identifier>);
+<structstmt> ::= <cmpdstmt> | <ifstmt> | <whilestmt> | <forstmt>
+<ifstmt> ::= if (<condition>) { <stmt> } else { <stmt> }
+<whilestmt> ::= while (<condition>) { <stmt> }
+<condition> ::= <expression> <reloperator> <expression>

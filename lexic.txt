@@ -1,5 +1,7 @@
 Operators:
-	+ - * / = > < >= =< 
+	+ - * / == != > < >= =<
+	operator = "+" | "-" | "*" | "/"
+	reloperator = "==" | "<" | ">" | "<=" | ">=" | "!="
 
 Separators:
 	[ ] { } ; space
