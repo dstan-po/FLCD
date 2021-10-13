@@ -1,0 +1,97 @@
+---- Problem 1 ----
+---- Compute de Max of 3 numbers ----
+
+_START_COMPUTING_
+
+	int first;
+	int second;
+	int third;
+	_STOP_DEC_
+
+	read(first);
+	read(second);
+	read(third);
+
+	if (first >= second and first >= third) {
+		print(first);
+	} else if (second >= first and second >= third) {
+		print(second);
+	} else if (third >= first and third >= second) {
+		print(third);
+	}
+
+_STOP_COMPUTING_
+
+---- Problem 2 ----
+---- Compute gcd of 2 numbers ----
+	
+_START_COMPUTING_
+
+	int first;
+	int second;
+	int temporary;
+	_STOP_DEC_
+
+	read(first);
+	read(second);
+
+    while (b != 0) {
+    	temporary = 0;
+
+        temporary = second;
+        second = first % second;
+        first = temporary;
+    }
+
+    print(first);
+
+_STOP_COMPUTING_
+
+---- Problem 3 ----
+---- Compute the sum of n numbers ----
+
+_START_COMPUTING_
+
+	int[100] numberArray;
+	int numberRead;
+	int readingIndex = 0;
+	int sumIndex = 0;
+	int sum = 0;
+	_STOP_DEC_
+
+	while (numberRead != -1) {
+		read(numberRead);
+		numberArray[readingIndex] = numberRead;
+		readingIndex = readingIndex + 1;
+	}
+
+	while (sumIndex < readingIndex) {
+		sum = sum + numberArray;
+		sumIndex = sumIndex + 1;
+	}
+
+_STOP_COMPUTING_
+
+---- Problem 1 err ----
+---- Compute de Max of 3 numbers ----
+
+_START_COMPUTING_
+
+	int 1stNumber; <--- Variable names can't start with digits
+	int second;
+	int third;
+	_STOP_DEC_
+
+	1stNumber = 1ha; <--- Not recognized
+	read(second);
+	read(third);
+
+	if (1stNumber >= second and 1stNumber >= third) {
+		print(1stNumber);
+	} else if (second >= 1stNumber and second >= third) {
+		print(second);
+	} else if (third >= 1stNumber and third >= second) {
+		print(third);
+	}
+
+_STOP_COMPUTING_

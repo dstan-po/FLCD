@@ -1,0 +1,16 @@
+# SYNTAX.IN
+<program> ::= _START_COMPUTING_<declist>_STOP_DEC_<compdstmt>_STOP_COMPUTING_
+<declist> ::= <declaration> | <declaration>;<declist>
+<declaration> ::= <type> <identifier> | <array> <identifier>
+<type> ::= int | string | boolean
+<array> ::= <type>[<integer>]
+<statementlst> ::= <stmt> | <stmt> ; <stmtlst>
+<stmt> ::= <simplestmt> | <structstmt>
+<simplestmt> ::= <assignstmt> | <iostmt>
+<assignstmt> ::= <identifier> = <expression> | <identifier>[<number>] = <expression>
+<expression> ::= <expression> <operator> <identifier> | <expression> <operator> (<expression>) | <identifier>
+<iostmt> ::= read(<identifier>); | write(<identifier>);
+<structstmt> ::= <cmpdstmt> | <ifstmt> | <whilestmt> | <forstmt>
+<ifstmt> ::= if (<condition>) { <stmt> } else { <stmt> }
+<whilestmt> ::= while (<condition>) { <stmt> }
+<condition> ::= <expression> <reloperator> <expression>
