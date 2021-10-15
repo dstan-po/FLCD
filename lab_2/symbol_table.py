@@ -1,43 +1,58 @@
+'''
+Git: https://github.com/dstan-po/FLCD/tree/master/lab_2
+
+The symbol table implements a hash map with chaining.
+
+Hashing:
+	The formula for hashing is:
+		hash(value) % size_of_hash_table
+	hash() being the python hash function
+
+Searching a symbol:
+	The name of the symbol is given as a parameter.
+
+	Calculate the hash value of the symbol.
+
+	The hash value is used find the position in the hash map,
+	then the symbol is searched in the obtained list:
+		If the symbol is found:
+			return the tuple (hash value, position in list)
+		If the symbol is not found:
+			return None
+
+Adding a symbol:
+	If name of the symbol is given as a parameter.
+
+	Calculate the hash value of the symbol.
+
+	The symbol is searched in the table:
+		If the symbol is not found:
+			Append to the list on the hash value position and return (hash value, position in list)
+		If the symbol is found:
+			return the result of the search (hash value, position in list)
+'''
+
 class SymbolTable:
 	def __init__(self, length):
+		self.length = length
 		self.hash_table = [[] for array in range(length)]
 
-	def insert(self, key, value):
-		hash_key = self.hashFunction(key)
-		key_exists = False
-		key_values = self.hash_table[hash_key]
-
-		for index, kv in enumerate(key_values):
-			k, v = kv
-			if key == k:
-				key_exists = True 
-				break
-
-		if key_exists:
-			key_values[index] = ((key, value))
-		else:
-			key_values.append((key, value))
-
-		return (key, value)
-
 	def hashFunction(self, key):
-		return hash(key) % len(self.hash_table)
+		return hash(key) % self.length
 
 	def search(self, key):
 		hash_key = self.hashFunction(key)
-		key_values = self.hash_table[hash_key]
-
-		for index, kv in enumerate(key_values):
-			k, v = kv
-			if key == k:
-				return v
+		try:
+			return (hash_key, self.hash_table[hash_key].index(key))
+		except Exception:
+			return None
 
 	def addSymbol(self, value):
-		return self.insert(value, value)
+		hash_key = self.hashFunction(value)
+		search_result = self.search(value)
 
-i = SymbolTable(15)
-print(i.hash_table)
-print(i.addSymbol("a"))
-print(i.addSymbol("a"))
-print(i.addSymbol("b"))
-print(i.hash_table)
+		if search_result == None:
+			self.hash_table[hash_key].append(value)
+			return (hash_key, self.hash_table[hash_key].index(value))
+		else:
+			return search_result
