@@ -1,0 +1,73 @@
+# LEXIC.IN
+Operators:
+	+ - * / == != > < >= =<
+	operator = "+" | "-" | "*" | "/"
+	reloperator = "==" | "<" | ">" | "<=" | ">=" | "!="
+
+Separators:
+	[ ] { } ; space
+
+Identifiers:
+	identifier = letter | letter{letter}{digit}
+	letter = "a" | "b" | ... | "z" | "A" | "B" | ... | "Z"
+	digit = "0" | "1" | ... | "9"
+
+Constants:
+	1. Integer:
+		integer = "0" | ["+" | "-"]non_zero{digit}
+		digit = non_zero | "0"
+		non_zero = "1" | "2" | ... | "9"
+
+	2. Charchter:
+		charachter = "'"letter"'" | "'"digit"'"
+
+	3. String:
+		constchar = """string"""
+		string = char{string}
+		char = letter | digit
+
+	4. Boolean:
+		bool = "true" | "false"
+
+# SYNTAX.IN
+<program> ::= _START_COMPUTING_<declist>_STOP_DEC_<compdstmt>_STOP_COMPUTING_
+<declist> ::= <declaration> | <declaration>;<declist>
+<declaration> ::= <type> <identifier> | <array> <identifier>
+<type> ::= int | string | boolean
+<array> ::= <type>[<integer>]
+<statementlst> ::= <stmt> | <stmt> ; <stmtlst>
+<stmt> ::= <simplestmt> | <structstmt>
+<simplestmt> ::= <assignstmt> | <iostmt>
+<assignstmt> ::= <identifier> = <expression> | <identifier>[<number>] = <expression>
+<expression> ::= <expression> <operator> <identifier> | <expression> <operator> (<expression>) | <identifier>
+<iostmt> ::= read(<identifier>); | write(<identifier>);
+<structstmt> ::= <cmpdstmt> | <ifstmt> | <whilestmt> | <forstmt>
+<ifstmt> ::= if (<condition>) { <stmt> } else { <stmt> }
+<whilestmt> ::= while (<condition>) { <stmt> }
+<condition> ::= <expression> <reloperator> <expression>
+
+# TOKEN.IN
++
+-
+*
+%
+/
+<
+>
+<=
+>=
+=
+;
+#
+[
+]
+{	
+}
+int
+string
+while
+if
+else
+_START_COMPUTING_
+_STOP_COMPUTING_
+_STOP_DEC_
