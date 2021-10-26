@@ -1,0 +1,21 @@
+_START_COMPUTING_
+
+	int[100] numberArray;
+	int numberRead;
+	int readingIndex = 0;
+	int sumIndex = 0;
+	int sum = 0;
+	_STOP_DEC_
+
+	while (numberRead != -1) {
+		read(numberRead);
+		numberArray[readingIndex] = numberRead;
+		readingIndex = readingIndex + 1;
+	}
+
+	while (sumIndex < readingIndex) {
+		sum = sum + numberArray;
+		sumIndex = sumIndex + 1;
+	}
+
+_STOP_COMPUTING_

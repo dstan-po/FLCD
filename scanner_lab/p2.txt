@@ -1,0 +1,21 @@
+_START_COMPUTING_
+
+	int first;
+	int second;
+	int temporary;
+	_STOP_DEC_
+
+	read(first);
+	read(second);
+
+    while (b != 0) {
+    	temporary = 0;
+
+        temporary = second;
+        second = first % second;
+        first = temporary;
+    }
+
+    print(first);
+
+_STOP_COMPUTING_
