@@ -1,0 +1,18 @@
+_START_COMPUTING_
+	int first;
+	int second;
+	int third;
+	_STOP_DEC_
+
+	read(first);
+	read(second);
+	read(third);
+
+	if (first >= second && first >= third) {
+		print(first);
+	} else if (second >= first && second >= third) {
+		print(second);
+	} else if (third >= first && third >= second) {
+		print(third);
+	}
+_STOP_COMPUTING_

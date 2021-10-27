@@ -1,0 +1,20 @@
+_START_COMPUTING_
+
+	int 1stNumber;
+	int second;
+	int third;
+	_STOP_DEC_
+
+	1stNumber = 1ha;
+	read(second);
+	read(third);
+
+	if (1stNumber >= second and 1stNumber >= third) {
+		print(1stNumber);
+	} else if (second >= 1stNumber and second >= third) {
+		print(second);
+	} else if (third >= 1stNumber and third >= second) {
+		print(third);
+	}
+
+_STOP_COMPUTING_
