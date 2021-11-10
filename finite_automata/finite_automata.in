@@ -1,0 +1,5 @@
+states:X,Y,Z
+input_symbols:1,0
+initial_state:X
+final_states:X,Y
+transition_function:(X,1)->Y;(X,0)->Z;(Z,0)->Y;(Y,1)->Z
